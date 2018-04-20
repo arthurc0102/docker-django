@@ -1,4 +1,4 @@
-# docker-django-deploy
+# Docker Django deploy
 
 > Deploy Django app with Docker 
 
