@@ -1,6 +1,6 @@
-# Docker Django deploy
+# Docker Django
 
-> Deploy Django app with Docker
+> Build a Django Docker image
 
 > Only Python3!!!  
 > Only Python3!!!  
@@ -17,14 +17,14 @@
 
 For MySQL version, your Dockerfile:
 ```Dockerfile
-FROM arthurc0102/django-deploy:mysql
+FROM arthurc0102/django:mysql
 
 RUN pip3 install --no-cache-dir -r requirements.txt
 ```
 
 For PostgreSQL version, your Dockerfile:
 ```Dockerfile
-FROM arthurc0102/django-deploy:postgresql
+FROM arthurc0102/django:postgresql
 
 RUN pip3 install --no-cache-dir -r requirements.txt
 ```
