@@ -2,8 +2,8 @@
 
 > Deploy Django app with Docker
 
-> Only Python3!!!
-> Only Python3!!!
+> Only Python3!!!  
+> Only Python3!!!  
 > Only Python3!!!
 
 
