@@ -3,6 +3,11 @@ FROM alpine:3.7
 # Change working directory
 WORKDIR /usr/src/app
 
+# Volumes
+VOLUME /usr/src/app/log
+VOLUME /usr/src/app/media
+VOLUME /usr/src/app/assets
+
 # Posts
 EXPOSE 8000
 
@@ -15,6 +20,10 @@ RUN apk add --no-cache \
   musl-dev \
   mariadb-dev
 
+# Copy docker-entrypoint.sh
+COPY ../docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
 # Update all packages
 ONBUILD RUN apk upgrade --no-cache
 
@@ -24,5 +33,6 @@ ONBUILD RUN pip3 install --upgrade --no-cache-dir pip setuptools uwsgi
 # Copy Djnago project to working directory
 ONBUILD COPY . .
 
-# Install python packages
-ONBUILD RUN pip3 install --no-cache-dir -r requirements.txt
+# Run!
+ENTRYPOINT [ "docker-entrypoint.sh" ]
+CMD [ "uwsgi", "--ini", "uwsgi.ini" ]
