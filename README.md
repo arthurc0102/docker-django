@@ -15,19 +15,21 @@
 
 ### Use
 
-For MySQL version
+For MySQL version, your Dockerfile:
 ```Dockerfile
-FROM django-deploy:mysql
+FROM arthurc0102/django-deploy:mysql
 
 RUN pip3 install --no-cache-dir -r requirements.txt
 ```
 
-For PostgreSQL version
+For PostgreSQL version, your Dockerfile:
 ```Dockerfile
-FROM django-deploy:postgresql
+FROM arthurc0102/django-deploy:postgresql
 
 RUN pip3 install --no-cache-dir -r requirements.txt
 ```
+
+And create your own `uwsgi.ini`
 
 ### About
 
