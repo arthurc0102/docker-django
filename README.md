@@ -16,20 +16,31 @@
 ### Use
 
 For MySQL version, your Dockerfile:
-```Dockerfile
+```dockerfile
 FROM arthurc0102/django:mysql
 
 RUN pip3 install --no-cache-dir -r requirements.txt
 ```
 
 For PostgreSQL version, your Dockerfile:
-```Dockerfile
+```dockerfile
 FROM arthurc0102/django:postgresql
 
 RUN pip3 install --no-cache-dir -r requirements.txt
 ```
 
 And create your own `uwsgi.ini`
+
+If you need more OS package just install it.
+```dockerfile
+FROM arthurc0102/django:<tag>
+
+RUN apk add --no-cache <packages>
+
+RUN pip3 install --no-cache-dir -r requirements.txt
+```
+
+Finally you can build it `docker build -t <repl>:<tag> .`!
 
 ### About
 
