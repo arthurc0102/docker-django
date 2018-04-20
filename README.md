@@ -10,6 +10,7 @@
 ### Version
 
 - MySQL ([Dockerfile](./mysql/Dockerfile))
+- PostgreSQL ([Dockerfile](./postgresql/Dockerfile))
 
 
 ### Use
