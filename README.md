@@ -71,7 +71,7 @@ optmize = true
 req-logger = file:./log/access-@(exec://date +%%Y-%%m-%%d).log
 logger = djangoerror file:./log/error-@(exec://date +%%Y-%%m-%%d).log
 logger = file:./log/info-@(exec://date +%%Y-%%m-%%d).log
-log-route = djangoerror (ERROR:django.*(\n.*)*)
+log-route = djangoerror (ERROR:django.*(\n.*)*)  ; FIXME: Not working, I am not sure why... @@
 log-reopen = true
 ```
 
